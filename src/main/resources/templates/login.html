@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action="/doLogin" method="post">
+
+    <span th:if ="${loginFailed}" style="color:red">Login Failed!</span> <br/>
+
+    <span th:errors="${loginModel.userName}" style="color:red"></span><br/>
+   UserName: <input type="text" name="userName"/><br/>
+
+    <span th:errors="${loginModel.password}" style="color:red"></span><br/>
+   Password: <input type="text" name="password"/><br/>
+
+    <input type="submit" value="Login"/>
+</form><br>
+<a href="/signup">Sign up</a>
+</body>
+</html>

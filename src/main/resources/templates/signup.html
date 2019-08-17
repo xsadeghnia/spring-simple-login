@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Signupppp</title>
+</head>
+<body>
+<form action="doSignup" method="post">
+
+   Name:<input type="text" name="name"><br/>
+
+    <span th:if ="${duplicateUser}" style="color:red">User exists!</span> <br/>
+    <span th:errors="${signupModel.userName}" style="color:red"></span><br/>
+   UserName:<input type="text" name="userName"><br/>
+
+   Email:<input type="text" name="email"><br/>
+
+    <span th:errors="${signupModel.password}" style="color:red"></span><br/>
+   Password:<input type="text" name="password"><br/>
+
+    <span th:errors="${signupModel.rePassword}" style="color:red"></span><br/>
+    <span th:if ="${repasswordError}" style="color:red">2 passwords should be equal</span> <br/>
+   Repeat Password<input type="text" name="rePassword"><br/>
+
+   <input type="submit" value="Submit">
+</form>
+</body>
+</html>
